@@ -1,4 +1,4 @@
-# INformation
+# Information
 
 This servie to photos management.
 
