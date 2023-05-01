@@ -12,8 +12,6 @@ class PhotoController extends Controller
 	{
 		$photos = Photo::get();
 		return view( 'photo.index', compact( 'photos' ) );
-
-		// return view( 'photo.index' );
 	}
 
 	public function upload( Request $request )
