@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PhotoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get( '/', function () {
+//     return view( 'upload' );
+// });
+
+Route::get( '/', [ PhotoController::class, 'index' ] ) -> name( 'photo.index' );
+Route::get( '/upload', [ PhotoController::class, 'upload' ] ) -> name( 'photo.upload' );
+Route::post( '/store', [ PhotoController::class, 'store' ] ) -> name( 'photo.store' );
