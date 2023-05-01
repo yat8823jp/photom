@@ -11,4 +11,5 @@ RUN docker-php-ext-install curl
 RUN docker-php-ext-install session
 RUN docker-php-ext-install tokenizer
 RUN docker-php-ext-enable pdo_mysql mbstring xml curl session tokenizer xdebug
+COPY php.ini /usr/local/etc/php/php.ini
 WORKDIR /var/www/html

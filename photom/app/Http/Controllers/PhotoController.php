@@ -16,9 +16,9 @@ class PhotoController extends Controller
 		// return view( 'photo.index' );
 	}
 
-	public function create( Request $request )
+	public function upload( Request $request )
 	{
-		return view( 'photo.create' );
+		return view( 'photo.upload' );
 	}
 
 	public function store( Request $request )
@@ -28,6 +28,7 @@ class PhotoController extends Controller
 		$img = $request -> file( 'img_path' );
 
 		if( isset( $img ) ) {
+
 			$path = $img -> store( $dir, 'public' );
 
 			if( $path ) {

@@ -20,5 +20,5 @@ use App\Http\Controllers\PhotoController;
 // });
 
 Route::get( '/', [ PhotoController::class, 'index' ] ) -> name( 'photo.index' );
-Route::get( '/create', [ PhotoController::class, 'create' ] ) -> name( 'photo.create' );
+Route::get( '/upload', [ PhotoController::class, 'upload' ] ) -> name( 'photo.upload' );
 Route::post( '/store', [ PhotoController::class, 'store' ] ) -> name( 'photo.store' );
