@@ -1,4 +1,5 @@
 FROM php:8.0.5-fpm-alpine
+ADD php.ini /usr/local/etc/php/php.ini
 RUN apk --update add \
      && apk add build-base curl git zip tar unzip vim oniguruma-dev
 RUN cd /usr/bin && curl -sS https://getcomposer.org/installer | php && ln -s /usr/bin/composer.phar /usr/bin/composer
@@ -11,5 +12,6 @@ RUN docker-php-ext-install curl
 RUN docker-php-ext-install session
 RUN docker-php-ext-install tokenizer
 RUN docker-php-ext-enable pdo_mysql mbstring xml curl session tokenizer xdebug
-COPY php.ini /usr/local/etc/php/php.ini
 WORKDIR /var/www/html
+CMD ["php-fpm"]
+EXPOSE 9000
