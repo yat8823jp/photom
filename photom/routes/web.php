@@ -22,5 +22,6 @@ use App\Http\Controllers\PhotoController;
 Route::get( '/', [ PhotoController::class, 'index' ] ) -> name( 'photo.index' );
 Route::get( '/upload', [ PhotoController::class, 'upload' ] ) -> name( 'photo.upload' );
 Route::post( '/store', [ PhotoController::class, 'store' ] ) -> name( 'photo.store' );
+Route::get( '/photo', [ PhotoController::class, 'detail' ] ) -> name( 'photo.detail' );
 
 Route::get( 'phpinfo', function() { return view( 'phpinfo' ); } );
