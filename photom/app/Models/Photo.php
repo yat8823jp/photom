@@ -13,5 +13,11 @@ class Photo extends Model
 
 	protected $fillable = [
 		'img_path',
+		'maker',
+		'model',
+		'ISOSpeedRatings',
+		'ExposureTime',
+		'ApertureValue',
+		'MimeType'
 	];
 }

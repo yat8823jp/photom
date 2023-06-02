@@ -27,14 +27,23 @@ class PhotoController extends Controller
 
 		$img = $request -> file( 'img_path' );
 
-
 		if( isset( $img ) ) {
 
 			$path = $img -> store( $dir, 'public' );
 
+			$storage = Storage::url( $path );
+			$img_meta =  exif_read_data(  "." . $storage  );
+			var_dump( $img_meta );
+
 			if( $path ) {
 				Photo::create ( [
-					'img_path' => $path,
+					'img_path'        => $path,
+					'maker'           => $img_meta["Make"],
+					'model'           => $img_meta["Model"],
+					'ISOSpeedRatings' => $img_meta["ISOSpeedRatings"],
+					'ExposureTime'    => $img_meta["ExposureTime"],
+					'ApertureValue'   => $img_meta["ApertureValue"],
+					'MimeType'        => $img_meta["MimeType"]
 				] );
 			}
 		}
