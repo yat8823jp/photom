@@ -19,37 +19,37 @@
 					<tr>
 						<td>メーカー</td>
 						<td>
-							{{ $meta[ "Make" ] }}
+							<?php if ( isset ( $meta[ "Make" ] ) ) echo $meta[ "Make" ] ?>
 						</td>
 					</tr>
 					<tr>
 						<td>モデル</td>
 						<td>
-							{{ $meta[ "Model" ] }}
+							<?php if ( isset ( $meta[ "Model" ] ) ) echo $meta[ "Model" ] ?>
 						</td>
 					</tr>
 					<tr>
 						<td>ISO</td>
 						<td>
-							{{ $meta[ "ISOSpeedRatings" ] }}
+							<?php if ( isset ( $meta[ "ISOSpeedRatings" ] ) ) echo $meta[ "ISOSpeedRatings" ] ?>
 						</td>
 					</tr>
 					<tr>
 						<td>シャッタースピード</td>
 						<td>
-							{{ $meta[ "ExposureTime" ] }}
+							<?php if ( isset ( $meta[ "ExposureTime" ] ) ) echo $meta[ "ExposureTime" ] ?>
 						</td>
 					</tr>
 					<tr>
 						<td>絞り</td>
 						<td>
-							{{ $meta[ "ApertureValue" ] }}
+							<?php if ( isset ( $meta[ "ApertureValue" ] ) ) echo $meta[ "ApertureValue" ] ?>
 						</td>
 					</tr>
 					<tr>
 						<td>Mine Type</td>
 						<td>
-							{{ $meta[ "MimeType" ] }}
+							<?php if ( isset ( $meta[ "MimeType" ] ) ) echo $meta[ "MimeType" ] ?>
 						</td>
 					</tr>
 				</tbody>

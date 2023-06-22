@@ -12,7 +12,11 @@
 <body>
 <header class="l-header">
 	<nav class="p-nav">
-		<p><a class="logo" href="/">Photom</a></p>
+		<p><a class="logo" href="/">Stocker</a></p>
+		<form method="GET" action="{{ route( 'photo.index' ) }}">
+			<input type="text" placeholder="Search" name="search" value="@if ( isset( $search ) ) {{ $search }} @endif">
+			<input type="submit" value="search">
+		</form>
 		<ul class="p-nav__list">
 			@if( Auth::check() )
 				<li><span>ようこそ, {{ Auth::user() -> name }} さん</span></li>
